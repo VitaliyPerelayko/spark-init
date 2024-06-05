@@ -11,4 +11,13 @@ spark-submit \
 ```
 ------------------------------------------------------------------
 ## word count
-* set
+* run the script (data_dir path to text files)
+```commandline
+spark-submit word_count.py <data_dir>
+```
+------------------------------------------------------------------
+## bigrams count
+* run the script (data_dir path to text files)
+```commandline
+spark-submit bigram_count.py <data_dir>
+```

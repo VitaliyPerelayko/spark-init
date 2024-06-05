@@ -25,14 +25,19 @@ if __name__ == '__main__':
 
     @udf(returnType=ArrayType(StringType()))
     def split_words(line: str) -> List[str]:
+        bigrams = []
+        prev_word = ''
         words = line.strip().split()
-        true_words = []
+
         for word in words:
             word = word.strip().lower()
             word = pattern.sub('', word)
             if word != '':
-                true_words.append(word)
-        return true_words
+                if prev_word != '':
+                    bigrams.append(prev_word + ' ' + word)
+                prev_word = word
+
+        return bigrams
 
     word_to_counter = (data.filter(data.value != "")
                        .select(explode(split_words('value')).alias('word'))
@@ -40,6 +45,6 @@ if __name__ == '__main__':
                        .count()
                        .sort(desc('count'))
                        )
-    word_to_counter.coalesce(1).toPandas().to_csv('wc_result.csv', index=False)
+    word_to_counter.coalesce(1).toPandas().to_csv('bigrams_result.csv', index=False)
 
     spark.stop()
