@@ -1,7 +1,7 @@
 name: style-checker
 on:
   push:
-    branches: [master]
+    branches: [main]
   pull_request:
   workflow_dispatch:
 jobs:
