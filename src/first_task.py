@@ -2,7 +2,7 @@ import sys
 
 from pyspark import SparkConf, SparkContext, SparkFiles
 
-import job
+from src import job
 
 if __name__ == '__main__':
 
@@ -16,7 +16,7 @@ if __name__ == '__main__':
     customers_file = SparkFiles.get('customers.csv')
     articles_file = SparkFiles.get('articles.csv')
     transaction_file = SparkFiles.get('transactions_train.csv')
-    result_file = './result.csv'
+    result_file = '../result.csv'
     part_date = sys.argv[1]
 
     result = job.build_data_mart(

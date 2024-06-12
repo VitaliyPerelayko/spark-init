@@ -1,5 +1,5 @@
-# spark-init
-to run
+## first task
+
 * set WORKING_DIR where data is stored
 * run the script (replace <part_date> with proper month "2019-07-31" for example)
 ```commandline
@@ -9,3 +9,6 @@ spark-submit \
     --py-files job.py \
     first_task.py <part_date>
 ```
+------------------------------------------------------------------
+## word count
+* set
