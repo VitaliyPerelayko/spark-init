@@ -47,10 +47,10 @@ def aggregator_reducer(record1: tuple, record2: tuple) -> tuple:
         if item1[1] > item2[1]:
             return item1
         # if prices are equal get the earliest purchase
-        elif item1[1] == item2[1] and item1[2] <= item2[2]:
+        if item1[1] == item2[1] and item1[2] <= item2[2]:
             return item1
-        else:
-            return item2
+
+        return item2
 
     # (customer_id, (article_id, price, transaction_date), 1, transaction_date, {product_group})
     most_exp = most_exp_article_id(record1[0], record2[0])
