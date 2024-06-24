@@ -21,3 +21,13 @@ spark-submit word_count.py <data_dir>
 ```commandline
 spark-submit bigram_count.py <data_dir>
 ```
+-----------------------------------------------------------------
+## data mart v2
+* run the script 
+```commandline
+export DATA_FOLDER=<path to folder with data>
+export RESULTS_FOLDER=<path to folder where script will sore data_marts>
+spark-submit \
+    --py-files data_mart_v2_handler.py \
+    data_mart_v2_manager.py 2019-08-31 USD
+```
