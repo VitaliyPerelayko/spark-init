@@ -2,10 +2,10 @@ from datetime import date, timedelta
 from os import getenv, listdir
 from sys import argv
 
-from data_mart_v2_handler import aggregate_data
-
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import when
+
+from data_mart_v2_handler import aggregate_data
 
 MIN_PART_DATE = date.fromisoformat('2018-09-30')
 RESULT_FILE_NAME = 'data_mart_v2_'
