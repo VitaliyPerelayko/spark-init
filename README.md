@@ -31,3 +31,13 @@ spark-submit \
     --py-files data_mart_v2_handler.py \
     data_mart_v2_manager.py 2019-08-31 USD
 ```
+-----------------------------------------------------------------
+## data mart v3 (spark final task)
+* run the script 
+```commandline
+export DATA_FOLDER=<path to folder with data>
+export RESULTS_FOLDER=<path to folder where script will sore data_marts>
+spark-submit \
+    --py-files data_mart_v3_handler.py \
+    data_mart_v3_manager.py 2019-08-31 BYN 4
+```
